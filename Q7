@@ -1,4 +1,4 @@
-//implement binary search
+//bobble sort
 #include <iostream>
 using namespace std;
 
