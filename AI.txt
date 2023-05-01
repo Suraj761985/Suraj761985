@@ -1,0 +1,557 @@
+PROGRAM : 01
+
+AIM :
+
+WAP to calculate area of a circle, rectangle and square.
+
+CODE:
+
+# area of circle
+
+def circle():
+radius = float(input("\nEnter radius of circle : "))
+return 3.14*radius*radius
+
+# area of square
+
+def square():
+side = float(input("\nEnter side of square : "))
+return side*side
+
+# area of rectangle
+
+def rectangle():
+length = float(input("\nEnter length of rectangle : "))
+breath = float(input("Enter breath of rectangle : "))
+return length*breath
+
+# function call
+while(True):
+print ("\nChoose shape for area calculation :")
+print("1. Circle\n2. Rectangle\n3. Square\n4. Exit(any key)")
+choice = input("Enter your choice : ")
+if(choice=="1"):
+result = circle()
+elif(choice=="'2"):
+result = rectangle()
+elif(choice=="'3"):
+result = square()
+else:
+print ("Exit")
+exit()
+print ("Area of shape is", result)
+
+OUTPUT:
+
+Choose shape for area calculation :
+1. Circle
+
+2. Rectangle
+
+3. Square
+
+4, Exit(any key)
+
+Enter your choice : 1
+
+Enter radius of circle : 7
+Area of shape is 153.86
+
+Choose shape for area calculation :
+1. Circle
+
+2. Rectangle
+
+3. Square
+
+4. exit(any key)
+Enter your choice : 2
+
+Enter length of rectangle : 12
+Enter breath of rectangle : 10
+Area of shape is 120.0
+
+Choose shape for area calculation :
+1. Circle
+
+2. Rectangle
+
+3. Square
+
+4. Exit(any key)
+Enter your choice :
+
+Enter side of square : 12
+Area of shape is 144.0
+
+Choose shape for area calculation :
+1. Circle
+
+2. Rectangle
+
+3. Square
+
+4. Exit(any key)
+Enter your choice : 4
+Exit
+
+PROGRAM : 02
+
+AIM :
+
+WAP to print fibonacci series of a number of term.
+
+CODE :
+
+# WAP to print fibonacci series of a number of term
+= int(input ("Enter number of term : "))
+
+# fabonacci series function
+def fabo(n):
+nl,n2 = 0,1
+print("\nFibonacci series : ",end="")
+if n==1:
+print("e")
+elif n»>=2:
+print("e",end=" ")
+for i in range (2,n+1):
+print(n2,end=" ")
+nl,n2 = n2,nl+n2
+
+else:
+print("Enter a valid number of term.")
+
+fabo(n)
+
+OUTPUT:
+
+Enter number of term : 10
+
+Fibonacci series : ©1123 58 13 21 34
+
+PROGRAM : 03
+
+AIM :
+WAP to calculate HCF and LCM of two numbers.
+
+CODE :
+
+# WAP to calculate HCF and LCM of two numbers
+numl = int(input("Enter first number : "))
+num2 = int(input("Enter second number : "))
+
+# LCM function
+def lcm(numl,num2):
+for i in range(1,numl*num2):
+if(i%numl==0 and i%num2==0):
+return i
+return numl*num2
+
+# HCF function
+def hcf(numl,num2):
+for i in range(numl,1,-1):
+if(numl%i==0 and num2%i==0):
+return i
+return 1
+
+# function call
+
+lcm = lcm(numl,num2)
+
+hcf = hcf(numl,num2)
+
+print ("\nLCM of numbers is",lcm,"and HCF of numbers is", hcf)
+
+OUTPUT:
+
+Enter first number : 12
+Enter second number : 18
+
+LCM of numbers is 36 and HCF of numbers is 6
+
+PROGRAM : 04
+
+AIM :
+WAP to illustrate various functions of math module & statistics module.
+CODE:
+
+# WAP to illustrate various functions of math module & statistics module
+import math
+import statistics as stat
+
+while(True):
+print("\nChoose function :")
+print("1. Statistics function\n2. Math function\n3. Exit(any key)")
+choice = input("Enter your choice : ")
+if(choice=="1"):
+# function call
+numbers = [2, 5, 6, 4, 8, 9, 12, 5, 2]
+print(f"List of numbers : {numbers}")
+i=1
+while(i<10):
+print("\nChoose statitics function :")
+print("1. mean()\n2. mode()\n3. median()\n4. Exit(any key)")
+choice = input("Enter your choice : ")
+if(choice=="1"):
+print (f"Mean of list is : {stat.mean(numbers)}")
+elif(choice=="'2"):
+print (f"Mode of list is : {stat.mode(numbers)}")
+elif(choice=="'3"):
+print(f"Median of list is : {stat.median(numbers)}")
+else:
+print ("Exit")
+i=10
+elif(choice=="2"):
+# function call
+Jj =1
+while(j<20):
+print("\nChoose math function :")
+print("1. sqrt()\n2. logle()\n3. pow()\n4. Exit(any key)")
+choice = input("Enter your choice : ")
+if(choice=="1"):
+num = int(input("Enter number : "))
+print("Square root of",num,"is",math.sqrt(num))
+elif(choice=="'2"):
+num = int(input("Enter number : "))
+print("log of",num, "with base 10",math.logl@(num))
+elif(choice=="3"):
+base = int(input("Enter base : "))
+power = int(input("Enter power : "))
+print (base, "to power",power,"is",math.pow(base,power))
+
+else:
+print ("Exit")
+j=20
+else:
+print ("Exit")
+exit()
+
+OUTPUT:
+
+Choose function :
+
+1. Statistics function
+
+2. Math function
+
+3. Exit(any key)
+
+Enter your choice : 1
+
+List of numbers : [2, 5, 6, 4, 8, 9, 12, 5, 2]
+
+Choose statitics function :
+1. mean()
+
+2. mode()
+
+3. median()
+
+4, Exit(any key)
+
+Enter your choice : 2
+
+Mode of list is : 2
+
+Choose statitics function :
+
+1. mean()
+
+2. mode()
+
+3. median()
+
+4. Exit(any key)
+
+Enter your choice : 1
+
+Mean of list is : 5.888888888888889
+
+Choose function :
+1. Statistics function
+2. Math function
+3. Exit(any key)
+Enter your choice : 2
+
+Choose math function :
+
+1. sqrt()
+
+2. logie()
+
+3. pow()
+
+4, Exit(any key)
+
+Enter your choice : 1
+
+Enter number : 48
+
+Square root of 48 is 6.928203230275509
+
+Choose math function :
+1. sqrt()
+
+2. logie()
+
+3. pow()
+
+4, Exit(any key)
+
+Enter your choice :
+Enter base : 2
+
+Enter power : 5
+
+2 to power 5 is 32.0
+
+PROGRAM : 05
+
+AIM :
+WAP to count number of vowel in a string.
+
+CODE:
+
+# WAP to count number of vowel in a string
+string = input("Enter your string : ")
+vowel = ('a','e','i','o",'u")
+
+count = ©
+
+for i in range(len(string)):
+if(string[i] in vowel):
+count +=1
+print ("Number of vowel in string is", count)
+
+OUTPUT:
+
+Enter your string : the elephant whisperers
+Number of vowel in string is 7
+
+PROGRAM : 06
+
+AIM :
+
+WAP to remove all the duplicate from a string.
+
+CODE :
+
+# WAP to remove all the duplicate from a string
+string = input("Enter your string : ")
+newstr = []
+
+for i in range(len(string)):
+
+if string[i] in newstr :
+continue
+
+newstr.append(string[i])
+
+newstr =
+
+.join(newstr)
+print("New string without duplication is :",newstr)
+
+OUTPUT:
+
+Enter your string : this is a sentence
+New string without duplication is : this aenc
+
+PROGRAM : 07
+
+AIM :
+
+WAP to calculate Sum of elements of a list.
+CODE:
+
+# WAP to calculate Sum of elements of a list
+list = [2, 5, 6, 9, 4, 8, 9, 5, 7]
+
+sum = ©
+
+for i in range(len(list)):
+sum += list[i]
+
+print("Sum of elemens is", sum)
+
+OUTPUT:
+
+| sum of elemens is 55
+
+PROGRAM : 08
+
+AIM :
+WAP to calculate Sum of elements of a list.
+
+CODE:
+
+# WAP to create a tuple from a list
+listData = [(1,1),(2,8),(3,27),(4,64),(5,125),(6,216)]
+
+# list to tuple conversion
+tupleData = tuple(listData)
+
+# printing tuple
+
+print("Type of Data", type(tupleData))
+print(tupleData)
+
+OUTPUT:
+
+Type of Data <class 'tuple'>
+((1, 1), (2, 8), (3, 27), (4, 64), (5, 125), (6, 216))
+
+PROGRAM : 09
+
+AIM :
+
+WAP to print fibonacci series of a number of term.
+
+CODE :
+
+# WAP to print fibonacci series of a number of term
+
+Dict = {"StdName":None, "Rollno":None, "Adno":None, "Marks" :None}
+Dict["StdName"] = input("Enter student name : ")
+
+Dict["Rollno"] = input("Enter student roll number : ")
+Dict["Adno"] = input("Enter student admission number : ")
+
+Dict["Marks"] = float(input("Enter student marks(in percent) : "))
+
+print(Dict)
+
+OUTPUT:
+
+Enter student name : Suraj
+
+Enter student roll number : 17510
+Enter student admission number : 7881
+Enter student marks(in percent) : 93.33
+
+{'stdname': 'Suraj', 'Rollno': '17510', 'Adno': '7881', 'Marks': 93.33}
+!
+
+PROGRAM : 10
+
+AIM :
+
+WAP to calculate factorial of a number.
+
+CODE :
+
+# WAP to calculate factorial of a number
+= int(input ("Enter number : "))
+
+# factorial function
+def fact(n):
+if n==1:
+return 1
+else:
+return n*fact(n-1)
+# function call
+factorial = fact(n)
+print(factorial)
+
+OUTPUT:
+
+Enter number :
+720
+
+Enter number :
+120
+
+PROGRAM : 11
+
+AIM :
+
+WAP to store student info using class concept.
+CODE:
+
+# WAP to store student info using class concept
+
+# student class
+class student:
+# constructor for passing student info
+def __init__ (self,name,rollno,adno,marks):
+self.name = name
+self.rollno = rollno
+self.adno = adno
+self.marks = marks
+
+# method to print details
+def printDetail(self):
+print(f"Name : {self.name}\nRoll no. : {self.rollno}\nAdmission no.
+{self.adno}\nMarks : {self.marks}\n")
+
+# object creation and method call for print student info
+Stdl = student("Suraj",1751@,"2117518",(7,8,8,9))
+Stdi.printDetail()
+
+Std2 = student(“Lakshay",17536,"2117536",(8,8,8,9))
+Std2.printDetail()
+
+Std3 = student("Priyanshu",17525,"2117525",(8,8,9,9))
+Std3.printDetail()
+
+OUTPUT:
+
+Name : Suraj
+
+Roll no. : 17510
+Admission no. : 2117510
+Marks : (7, 8, 8, 9)
+
+Name : Lakshay
+
+Roll no. : 17536
+Admission no. : 2117536
+Marks : (8, 8, 8, 9)
+
+Name : Priyanshu
+
+Roll no. : 17525
+Admission no. : 2117525
+Marks : (8, 8, 9, 9)
+
+PROGRAM : 12
+
+AIM :
+WAP for print triangle patterns.
+
+CODE :
+
+# Pattern 1
+for i in range(n):
+for j in range(i+1):
+print ("*",end="")
+print()
+print()
+
+# pattern 2
+for i in range(n,0,-1):
+for j in range(i):
+print("*",end="")
+print()
+print()
+
+# Pattern 3
+for i in range(n):
+for j in range(n-i-1):
+print(" ",end="")
+for k in range(i+1):
+print("* ",end="")
+print()
+print()
+
+# Pattern 4
+for i in range(n):
+for j in range(i):
+print(" ",end="")
+for k in range(n-i,0,-1):
+print("* ",end="")
+print()
+
+OUTPUT:
+
+
