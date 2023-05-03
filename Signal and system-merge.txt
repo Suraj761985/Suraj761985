@@ -1,0 +1,291 @@
+Signal and system
+Practical file
+
+NAME
+
+- AMAN MODANWAL
+
+COURSE
+
+- BSc (H) ELECTRONICS
+
+ROLL NO.
+
+- 17546
+
+SOFTWARE - SCILAB 6.0.1
+CLASS
+
+- SECOND YEAR
+
+SEMESTER - 4
+
+PROGRAM : 01
+AIM :
+Generation of Signals: Continuous time.
+
+CODE :
+// Generation of common continuous time signals
+clc;
+clear;
+close;
+// Unit step function
+t2 = 0:5;
+x2 = ones(1,6);
+subplot(3,2,1);
+plot(t2,x2);
+xlabel('time');
+ylabel('amplitude');
+title('Unit Step Continuous Signal');
+//Unit Impulse Signal
+t1 = -5:5;
+x1 =[zeros(1,5),ones(1,1),zeros(1,5)];
+subplot(3,2,2);
+plot(t1,x1);
+xlabel('time');
+ylabel('Amplitude');
+title('Unit Impulse signal');
+// Exponential signal
+t3 = 0:5;
+x3 = exp(-t3);
+subplot(3,2,3);
+plot(t3,x3);
+xlabel('time');
+ylabel('Amplitude');
+title('Exponential signal');
+//UNIT RAMP SIGNAL
+t4 = 0:5;
+x4 = t4;
+subplot(3,2,4);
+plot(t4,x4);
+xlabel('time');
+ylabel('Amplitude');
+title('Unit ramp signal');
+//Sinusodal Signal
+t5 = 0:0.04:1;
+x5 = sin(2*%pi*t5);
+subplot(3,2,5);
+
+plot(t5,x5);
+xlabel('time');
+ylabel('Amplitude');
+title('Sinusoidal Signal');
+//Random Signal
+t6 = -5:1:5;
+x6 = rand(1,11);
+subplot(3,2,6);
+plot(t6,x6);
+xlabel('time');
+ylabel('Amplitude');
+title('Random signal');
+
+OUTPUT:
+
+PROGRAM : 02
+AIM :
+Generation of Signals: Discrete time.
+
+CODE :
+// Generation of common discrete time signals
+clc;
+clear;
+close;
+// Unit step function
+t2 = 0:5;
+x2 = ones(1,6);
+subplot(3,2,1);
+plot2d3(t2,x2);
+xlabel('time');
+ylabel('amplitude');
+title('Unit Step Continuous Signal');
+//Unit Impulse Signal
+t1 = -5:5;
+x1 =[zeros(1,5),ones(1,1),zeros(1,5)];
+subplot(3,2,2);
+plot2d3(t1,x1);
+xlabel('time');
+ylabel('Amplitude');
+title('Unit Impulse signal');
+// Exponential signal
+t3 = 0:5;
+x3 = exp(-t3);
+subplot(3,2,3);
+plot2d3(t3,x3);
+xlabel('time');
+ylabel('Amplitude');
+title('Exponential signal');
+//UNIT RAMP SIGNAL
+t4 = 0:5;
+x4 = t4;
+subplot(3,2,4);
+plot2d3(t4,x4);
+xlabel('time');
+ylabel('Amplitude');
+title('Unit ramp signal');
+//Sinusoidal Signal
+t5 = 0:0.04:1;
+x5 = sin(2*%pi*t5);
+subplot(3,2,5);
+
+plot2d3(t5,x5);
+xlabel('time');
+ylabel('Amplitude');
+title('Sinusoidal Signal');
+//Random Signal
+t6 = -5:1:5;
+x6 = rand(1,11);
+subplot(3,2,6);
+plot2d3(t6,x6);
+xlabel('time');
+ylabel('Amplitude');
+title('Random signal');
+
+OUTPUT:
+
+PROGRAM : 03
+AIM :
+Time shifting and time scaling of signals.
+
+CODE :
+
+//TIME SHIFTING & TIME SCALING OF SIGNALS
+clc;
+clear;
+close;
+//TIME SHIFTING
+// Original signal
+n = 0:5;
+x=[0, 1, 2, 3, 3, 0];
+subplot(3,2,1);
+plot2d3(n,x);
+xlabel('time t');
+ylabel('x(t)');
+title('Origial Signal');
+//Right shited signal
+t1 = n+2;
+subplot(3,2,3);
+plot2d3(t1,x);
+xlabel('time t');
+ylabel('x(t-2)');
+title('Right shifted signal');
+//Left shited signal
+t2 = n-2;
+subplot(3,2,5);
+plot2d3(t2,x);
+xlabel('time');
+ylabel('x(t+2)');
+title('Left shifted signal');
+//TIME SCALING
+// Original signal
+t = -3:3;
+x=[0, 1, 2, 3, 2, 1, 0];
+subplot(3,2,2);
+plot2d(t,x);
+xlabel('time t');
+ylabel('x(t)');
+title('Origial Signal');
+//Time compression
+
+t3 = t/2;
+subplot(3,2,4);
+plot2d(t3,x);
+xlabel('time t');
+ylabel('x(t*2)');
+title('Time compression');
+//Time expansion
+t4 = t*2;
+subplot(3,2,6);
+plot2d(t4,x);
+xlabel('time t');
+ylabel('x(t/2)');
+title('Time expansion');
+
+OUTPUT:
+
+PROGRAM : 04
+AIM :
+Convolution of x(t)=a^t and h(t)=1 .
+
+CODE :
+// Convolution of x(t)= a^t and h(t)=1 signals
+clc;
+clear;
+close;
+//Funcition definition
+a = 0.5;
+for t=1:9;
+x(t)=a^t;
+h(t)=1;
+end
+t1=0:length(x)-1;
+//Input function
+subplot(3,1,1);
+plot2d(t1,x);
+xtitle('Input Signal','t', 'x(t)');
+//Impulse function
+subplot(3,1,2);
+plot2d(t1,h);
+xtitle('Impulse Signal','t', 'h(t)');
+//Input function
+y = convol(x,h);
+subplot(3,1,3);
+plot2d(t1,y(1:9));
+xtitle('Convolution of signals','t', 'y(t)');
+
+OUTPUT:
+
+PROGRAM : 05
+AIM :
+Convolution of x(n)=exp(-a*n) and h(n)=1.
+
+CODE :
+// Convolution of x(n)= exp(-a*n) and h(n)=1 signals
+clc;
+clear;
+close;
+//Funcition definition
+a = 0.5;
+for n=1:9;
+x(n)=exp(-a*n);
+h(n)=1;
+end
+n1=0:length(x)-1;
+//Input function
+subplot(3,1,1);
+plot2d3(n1,x);
+xtitle('Input Signal','n', 'x(n)');
+//Impulse function
+subplot(3,1,2);
+plot2d3(n1,h);
+xtitle('Impulse Signal','n', 'h(n)');
+//Input function
+y = convol(x,h);
+subplot(3,1,3);
+plot2d3(n1,y(1:9));
+xtitle('Convolution of signals','n', 'y(n)');
+
+OUTPUT:
+
+PROGRAM : 06
+AIM :
+To design low pass filter using Xcos (Scilab) simulation.
+
+BLOCK DIAGRAM :
+
+OUTPUT:
+
+SETUP COMPONENTS:
+For low pass filter
+
+PROGRAM : 07
+AIM :
+To design high pass filter using Xcos (Scilab) simulation.
+
+BLOCK DIAGRAM :
+
+OUTPUT:
+
+SETUP COMPONENTS:
+For high pass filter
+
+
