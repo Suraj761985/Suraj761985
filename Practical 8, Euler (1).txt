@@ -1,0 +1,106 @@
+Practical 8 , Euler.wxm
+
+Practical:8
+Euler methods for
+solving first order
+initial value problems
+of ODE’s.
+In this practical, we will use Euler's method
+to solve ode dy/dx=f(x,y)with
+initial condition y=y_0 at x=x_0. We find the
+approximate value of y(x_n)=y_n, where
+x_n=x_0+nh and h is the step size.
+The general formula is y_(i+1)=y_i+f(x_i,y_i)h.
+y_1=y(x_1)= y_0+f(x_0,y_0)h
+y_2=y(x_2)= y_1+f(x_1,y_1)h
+y_3=y(x_3)= y_2+f(x_2,y_2)h
+y_4=y(x_4)= y_3+f(x_3,y_3)h..................
+
+0.1 Question : Consider the IVP
+dy/dx=(x^2)+y with y(0)=1.
+Find the approximated
+value of y at 0.4 or y(0.4) with
+step size 0.1.
+Solution: The number of iterations n =4
+x0=0, h=0.1
+x1=x0+h=0+0.1=0.1
+x2=x0+2h=0+0.2=0.2,x2=x1+h
+x3=x0+3h=0+0.3=0.3
+x4=x0+4h=0+0.4=0.4
+We need to find y(x4).
+
+1 / 2
+
+Practical 8 , Euler.wxm
+
+2 / 2
+
+(%i9) kill(all)$
+
+f(x,y):=x^2+y;
+x0:0;
+y0:1;
+xn:0.4;
+n:4;
+h:0.1;
+print("
+","x0","
+","y0","
+","f(x0, y0)","
+","y[i]")$;
+for i:1 thru n do(
+slope:f(x0,y0),
+y[i]:y0+h·slope,
+print(i," iteration"),
+print("
+", x0,"
+",y0,"
+",slope,"
+",y[i]),
+y0:y[i],
+x0:x0+h);
+print("The approximation y(0.4)=", y[n])$;
+2
+
+(%o1) f ( x , y ) := x + y
+(%o2)
+(%o3)
+(%o4)
+(%o5)
+(%o6)
+
+0
+1
+0.4
+4
+0.1
+
+x0
+y0
+f(x0, y0)
+1 iteration
+0
+1
+1
+2 iteration
+0.1
+1.1
+1.11
+3 iteration
+0.2
+1.211
+1.251
+1.3361
+4 iteration
+0.3
+1.3361
+1.4261
+1.47871
+(%o8) done
+The approximation y(0.4)= 1.47871
+
+y[i]
+1.1
+1.211
+
+
